@@ -5,7 +5,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: GCEPersistentDisk      # Storage class. A PV Claim requesting the same storageClass can be bound to this volume. 
+  storageClassName: standard      # Storage class. A PV Claim requesting the same storageClass can be bound to this volume. 
   capacity:
     storage: 250Mi
   accessModes:
@@ -21,7 +21,6 @@ metadata:                          # Claim name and labels
   labels:
     app: polling-app
 spec:                              # Access mode and resource limits
-  storageClassName: GCEPersistentDisk       # Request a certain storage class
   accessModes:
     - ReadWriteOnce                # ReadWriteOnce means the volume can be mounted as read-write by a single Node
   resources:
